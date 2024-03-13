@@ -6,14 +6,11 @@ export class ProductService {
   constructor() {}
 
   public async createProduct(createProductDto: CreateProductDto) {
-    const productExist = await ProductModel.findOne({
-      name: createProductDto.name,
-    });
+    const productExist = await ProductModel.findOne({ name: createProductDto.name });
     if (productExist) throw CustomError.badRequest("Product already exists");
-
+    
     try {
-      const product = new ProductModel({ createProductDto });
-
+      const product = new ProductModel( createProductDto );
       await product.save();
 
       return product;
@@ -30,8 +27,9 @@ export class ProductService {
         ProductModel.countDocuments(),
         ProductModel.find()
           .skip((page - 1) * limit)
-          .limit(limit),
-        //  todo: populate
+          .limit(limit)
+          .populate("user" )
+          .populate("category")
       ]);
 
       return {

@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 
 export class Validators {
 
     static isMongoID( id: string ){
 
-        return  typeof id === "string" && mongoose.isValidObjectId( id );
+        return  typeof id === "string" && mongoose.isValidObjectId(id);
     }
 }

@@ -14,7 +14,7 @@ export class CreateProductDto {
   static create(obj: { [key: string]: any }): [string?, CreateProductDto?] {
    
     const { name, available, price, description, user, category } = obj;
-    console.log(user);
+
     if (!name) return ["Missing name"];
 
     if (!user) return ["Missing user"];

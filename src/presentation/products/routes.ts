@@ -13,7 +13,7 @@ export class ProductRoutes {
     // Definir las rutasproductService
     router.get("/", controller.getProducts );
     router.post("/", [ AuthMiddleware.validateJWT ] , controller.createProduct );
-
+    
     return router;
   }
 }

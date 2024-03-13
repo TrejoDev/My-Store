@@ -1,0 +1,10 @@
+{
+  "editor.fontFamily": "'Cascadia Code PL'",
+  "editor.fontLigatures": true,
+  "editor.fontVariations": true,
+  "editor.fontSize": 13,
+  "editor.fontWeight": "normal",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true
+}

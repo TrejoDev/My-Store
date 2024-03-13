@@ -27,7 +27,7 @@ export class UserEntity {
     if (!role) throw CustomError.badRequest("Missing role");
 
     return new UserEntity(
-      _id || id,
+      _id.toString() || id,
       name,
       email,
       emailValidated,
